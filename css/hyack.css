@@ -1,0 +1,110 @@
+/* RESET */
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,a,abbr,acronym,address,big,cite,code,del,dfn,font,img,ens,kbd,q,s,samp,small,strike,sub,sup,tt,var,b,u,i,center,dl,dt,dd,fieldset,form,label,legend,table,caption,tbody,tfoot,thread,tr,th,td {margin:0;padding:0;font-size:100%;vertical-align:baseline;border:0;outline:0;background:transparent;font-weight:normal;font-style:normal;}blockquote,q{quotes:none;}:focus{outline:0;}table{border-collapse:collapse;border-spacing:0;}legend{display:none;}
+
+.group:after {
+	content:  ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+/* TYPOGRAPHY */
+
+h2 {
+	font-family: ChunkFive, "American Typewriter", Georgia;
+	font-size: 35px;
+	text-transform: uppercase;
+	position: relative;
+	margin: 0 0 10px 0;
+}
+
+p {
+	margin: 0 0 1.12em 0;
+	font-family: Colaborate-Regular;
+}
+
+strong {
+	font-family:  Colaborate-Bold;
+	color:  #b5111a;
+}
+
+
+
+/* HEADER */
+
+#header-wrap {
+	background-color: #024d01;
+	top: 50px;
+	margin-top: 65px;
+	height: 50px;
+}
+
+#header {
+	position: absolute;
+	width: 100%;
+	line-height: 50px;
+	font-family: "ChunkFive", 'American Typewriter', Georgia;
+	font-size: 24px;
+	color: #fff;
+}
+
+#header img {
+	position:  absolute;
+	left: 50px;
+	top: -60px;
+}
+
+#header h1 {
+	float: left;
+	padding-left: 200px;
+	text-transform: uppercase;
+}
+
+
+/* CONTENT STYLES */
+
+#content {
+	margin-top: 10px;
+	width: 800px;
+	margin: 0 auto 20px auto;
+	overflow: auto;
+	padding: 0 25px 0 25px;
+}
+
+#content-blocks div {
+	padding-bottom: 30px;
+}
+
+.intro-imgwrap {
+	float: left;
+	padding: 0 15px 0 0;
+}
+
+.teaser {
+	font-size:  1.2em;
+}
+
+#campinfo li {
+	list-style: none;
+	font-family: Colaborate-Bold, Expressway, AlexandriaFLFBold, Helvetica, Arial, sans-serif;
+	font-size:  36px;
+	letter-spacing: -2px;
+}
+
+#intro p {
+	font-family: Colaborate-Medium;
+}
+
+.indented p, .indented form {
+	margin-left: 20px;
+}
+
+#content a {
+	text-decoration: none;
+}
+
+#content a:hover {
+	border-bottom: 1px dotted;
+}
