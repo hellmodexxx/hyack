@@ -77,6 +77,10 @@ strong {
 	padding-bottom: 30px;
 }
 
+#intro {
+	padding-bottom: 20px;
+}
+
 .intro-imgwrap {
 	float: left;
 	padding: 0 15px 0 0;
@@ -88,7 +92,7 @@ strong {
 
 #campinfo li {
 	list-style: none;
-	font-family: Colaborate-Bold, Expressway, AlexandriaFLFBold, Helvetica, Arial, sans-serif;
+	font-family: ChunkFive,Colaborate-Bold, Expressway, AlexandriaFLFBold, Helvetica, Arial, sans-serif;
 	font-size:  36px;
 	letter-spacing: -2px;
 }
