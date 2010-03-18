@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Hyack Camp 2010 &raquo; Scouts Canada New Westminster</title>
 	<link rel="stylesheet" type="text/css" href="css/hyack.css" media="all"/>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="js/hyack.js"></script>
 </head>
 <body>
 	
@@ -14,141 +16,143 @@
 		</div>
 	</div>
 	
-	<div id="content">
-		<div id="intro">
-			<div style="height:280px">
-				<div class="intro-imgwrap"><img src="http://farm1.static.flickr.com/191/522837923_63b0f1ea78.jpg" width="450" height="254" alt="" /></div>
-				<ul id="campinfo">
-					<li>May 28 &ndash; 30, 2010</li>
-					<li>Queens Park</li>
-					<li>New Westminster</li>
-				</ul>
-				<p class="teaser">The Scouts of New Westminster invite Troops from all Areas and Councils to the join us at a camp that brings new meaning to the phrase "wilderness camping."</p>
-			</div>
-
-			<p>Hyack Camp is unique. Held in Queens Park in the heart of the Royal City, it's a New Westminster tradition. When else do you get to camp in the middle of a city park alongside Troops from Burnaby, Vancouver, Surrey, the Tri-Cities and Washington state?</p>		
-		</div>
-
-		<div id="content-blocks">
-
-			<div id="activities" class="indented">	
-				<a name="activities"></a>
-				<h2>Activities</h2>
-
-				<img src="http://farm1.static.flickr.com/199/522851615_79584f21d2_m.jpg"  alt="hyack campfire - 02" style="float:left;padding:0 10px 10px 20px"/>
-
-				<p>You'll arrive on Friday night and make the long and arduous trek - tens of metres! - from the street to the park. Once you've set up your campsite you'll head down to the <a href="http://www3.telus.net/dallydog/sapperton/index2.html" target=_blank>Sapperton Fish and Game Club</a>, whose members will once again provide firearms safety instruction and supervised rifle range shooting.</p>
-
-				<p>On Saturday you're in for a hike, but it won't be like any you've taken before. The <a href="#parade">Hyack International Parade</a> is British Columbia's largest family-oriented parade with over 120 entries from British Columbia and the United States. We'll march in the parade before returning to camp for lunch (provided by the camp).</p>
-
-				<p>Saturday afternoon's program is still being developed but past years have included demonstrations by the <a href="http://nwpolice.org" target="_blank">New Westminster Police Service</a> dog squad and the <a href="http://www.newwestcity.ca/residents/public_safety/fire__rescue_services.php" target="_blank">New Westminster Fire &amp; Rescue Service</a> as well as free swim passes to <a href="http://www.nwpr.bc.ca/parks%20web%20page/cgp.html" target="_blank">Canada Games Pool</a>. Bring your swim trunks!</p>
-
-				<p>Saturday night will feature the traditional Hyack-campfire-on-the-ball-diamond, hosted by the 12th New Westminster Rover Crew. Where else do you get to sing around a campfire held at second base? Each patrol should be prepared with a song, skit and yell, and don't forget your campfire blanket!</p>
-			</div>
-
-			<div id="parade" class="indented">
-				<a name="parade"></a>
-				<h2>Parade</h2>
-
-				<img src="http://farm1.static.flickr.com/235/522824292_c73db994db.jpg" width="376" height="250" alt="hyack parade - 07" style="float:right;padding:0 0 10px 10px"/>
-
-				<p>The <a href="http://www.hyack.bc.ca/events/parade.php" target="_blank">Hyack International Parade</a> is about three kilometres in length and winds throughout New Westminster, starting at New Westminster Secondary School at 8th Avenue and 8th Street and finishing in Queens Park &mdash; right next to camp.</p>
-
-				<p>The parade attracts thousands of spectators and thus provides an excellent opportunity to showcase Scouting. As such, we ask that you bring and wear your complete uniform and look as sharp as possible. Of course, you're more than welcome to bring your flags!</p>
-
-				<p>In addition to participating in the parade as a marching unit, we also traditionally supply a number of Scouts to carry signs and banners in front of winning floats and at other points along the route. <strong>Each Troop participating in the parade will be asked to assist.</strong> The number of Scouts requested from each Troop will be based on a percentage of your total compliment and will be determined at camp once all Troops have arrived and checked in.</p> 
-			</div>	
-
-			<div id="location" class="group indented">
-				<a name="location"></a>
-				<h2>Location &amp; Logistics</h2>
-
-				<div class="group" style="float: left; padding: 0 10px 10px 20px">
-					<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=First+Street+and+Vancouver+Street,+New+Westminster+BC&amp;sll=49.21178,-122.901585&amp;sspn=0.008663,0.018883&amp;ie=UTF8&amp;hq=&amp;hnear=First+St+%26+Vancouver+St,+New+Westminster,+Greater+Vancouver+Regional+District,+British+Columbia,+Canada&amp;ll=49.212972,-122.902808&amp;spn=0.004906,0.00912&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe>
+	<div id="content-wrap">
+		<div id="content">
+			<div id="intro">
+				<div style="height:280px">
+					<div class="intro-imgwrap"><img src="http://farm1.static.flickr.com/191/522837923_63b0f1ea78.jpg" width="450" height="254" alt="" /></div>
+					<ul id="campinfo">
+						<li>May 28 &ndash; 30, 2010</li>
+						<li>Queens Park</li>
+						<li>New Westminster</li>
+					</ul>
+					<p class="teaser">The Scouts of New Westminster invite Troops from all Areas and Councils to the join us at a camp that brings new meaning to the phrase "wilderness camping."</p>
 				</div>
 
-				<p>Hyack Camp is held in Queens Park in the middle of New Westminster. The camp site is located <a href="http://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=&sll=49.203705,-122.914588&sspn=0.069314,0.151062&g=new+westminster,+bc&ie=UTF8&ll=49.212159,-122.902722&spn=0.004906,0.00912&z=16" target="_blank">adjacent to First Street and Vancouver Street</a>.</p>
-
-				<p>Parking is available on First, Vancouver and Granville Streets as well as in the park's paring lot. Please be respectful of our neighbours and do not park in or block private driveways. Vehicles are not permitted onsite.</p>
-
-				<p>Water, toilets and garbage containers are provided onsite. Bring what you would usually bring for a drive-in camp. With the exception of the Saturday campfire, open fires are <strong>not</strong> permitted in camp.</p>
-
+				<p>Hyack Camp is unique. Held in Queens Park in the heart of the Royal City, it's a New Westminster tradition. When else do you get to camp in the middle of a city park alongside Troops from Burnaby, Vancouver, Surrey, the Tri-Cities and Washington state?</p>		
 			</div>
 
-			<div id="registration">
-				<a name="registration"></a>
-				<h2>Registration</h2>
-				<p>Please complete the form below to register for Hyack Camp.</p>
-				<form id="hyackreg" name="hyackreg" action="#" method="POST">
+			<div id="content-blocks">
 
-					<fieldset id="groupinfo">
-						<legend>Group Information</legend>
-						<label for="grouptype">Organization</label>
-						<select name="grouptype" id="grouptype">
-							<option value="scouts_canada">Scouts Canada</option>
-							<option value="boy_scouts_of_america">Boy Scouts of America</option>
-							<option value="association_des_scouts_du_canada">Association des Scouts du Canada</option>
-							<option value="other">Other</option>
-						</select>
-						<div id="sc-fields">
-							<label for="council">Council</label>
-							<select name="council" id="council">
-								<option value="FVC">Fraser Valley</option>
-								<option value="PCC">Pacific Coast</option>
-								<option value="Cascadia">Cadcadia</option>
+				<div id="activities" class="indented">	
+					<a name="activities"></a>
+					<h2>Activities</h2>
+
+					<img src="http://farm1.static.flickr.com/199/522851615_79584f21d2_m.jpg"  alt="hyack campfire - 02" style="float:left;padding:0 10px 10px 20px"/>
+
+					<p>You'll arrive on Friday night and make the long and arduous trek - tens of metres! - from the street to the park. Once you've set up your campsite you'll head down to the <a href="http://www3.telus.net/dallydog/sapperton/index2.html" target=_blank>Sapperton Fish and Game Club</a>, whose members will once again provide firearms safety instruction and supervised rifle range shooting.</p>
+
+					<p>On Saturday you're in for a hike, but it won't be like any you've taken before. The <a href="#parade">Hyack International Parade</a> is British Columbia's largest family-oriented parade with over 120 entries from British Columbia and the United States. We'll march in the parade before returning to camp for lunch (provided by the camp).</p>
+
+					<p>Saturday afternoon's program is still being developed but past years have included demonstrations by the <a href="http://nwpolice.org" target="_blank">New Westminster Police Service</a> dog squad and the <a href="http://www.newwestcity.ca/residents/public_safety/fire__rescue_services.php" target="_blank">New Westminster Fire &amp; Rescue Service</a> as well as free swim passes to <a href="http://www.nwpr.bc.ca/parks%20web%20page/cgp.html" target="_blank">Canada Games Pool</a>. Bring your swim trunks!</p>
+
+					<p>Saturday night will feature the traditional Hyack-campfire-on-the-ball-diamond, hosted by the 12th New Westminster Rover Crew. Where else do you get to sing around a campfire held at second base? Each patrol should be prepared with a song, skit and yell, and don't forget your campfire blanket!</p>
+				</div>
+
+				<div id="parade" class="indented">
+					<a name="parade"></a>
+					<h2>Parade</h2>
+
+					<img src="http://farm1.static.flickr.com/235/522824292_c73db994db.jpg" width="376" height="250" alt="hyack parade - 07" style="float:right;padding:0 0 10px 10px"/>
+
+					<p>The <a href="http://www.hyack.bc.ca/events/parade.php" target="_blank">Hyack International Parade</a> is about three kilometres in length and winds throughout New Westminster, starting at New Westminster Secondary School at 8th Avenue and 8th Street and finishing in Queens Park &mdash; right next to camp.</p>
+
+					<p>The parade attracts thousands of spectators and thus provides an excellent opportunity to showcase Scouting. As such, we ask that you bring and wear your complete uniform and look as sharp as possible. Of course, you're more than welcome to bring your flags!</p>
+
+					<p>In addition to participating in the parade as a marching unit, we also traditionally supply a number of Scouts to carry signs and banners in front of winning floats and at other points along the route. <strong>Each Troop participating in the parade will be asked to assist.</strong> The number of Scouts requested from each Troop will be based on a percentage of your total compliment and will be determined at camp once all Troops have arrived and checked in.</p> 
+				</div>	
+
+				<div id="location" class="group indented">
+					<a name="location"></a>
+					<h2>Location &amp; Logistics</h2>
+
+					<!-- <div class="group" style="float: left; padding: 0 10px 10px 20px">
+						<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=First+Street+and+Vancouver+Street,+New+Westminster+BC&amp;sll=49.21178,-122.901585&amp;sspn=0.008663,0.018883&amp;ie=UTF8&amp;hq=&amp;hnear=First+St+%26+Vancouver+St,+New+Westminster,+Greater+Vancouver+Regional+District,+British+Columbia,+Canada&amp;ll=49.212972,-122.902808&amp;spn=0.004906,0.00912&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe>
+					</div> -->
+
+					<p>Hyack Camp is held in Queens Park in the middle of New Westminster. The camp site is located <a href="http://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=&sll=49.203705,-122.914588&sspn=0.069314,0.151062&g=new+westminster,+bc&ie=UTF8&ll=49.212159,-122.902722&spn=0.004906,0.00912&z=16" target="_blank">adjacent to First Street and Vancouver Street</a>.</p>
+
+					<p>Parking is available on First, Vancouver and Granville Streets as well as in the park's paring lot. Please be respectful of our neighbours and do not park in or block private driveways. Vehicles are not permitted onsite.</p>
+
+					<p>Water, toilets and garbage containers are provided onsite. Bring what you would usually bring for a drive-in camp. With the exception of the Saturday campfire, open fires are <strong>not</strong> permitted in camp.</p>
+
+				</div>
+
+				<div id="registration">
+					<a name="registration"></a>
+					<h2>Registration</h2>
+					<p>Please complete the form below to register for Hyack Camp.</p>
+					<form id="hyackreg" name="hyackreg" action="#" method="POST">
+
+						<fieldset id="groupinfo">
+							<legend>Group Information</legend>
+							<label for="grouptype">Organization</label>
+							<select name="grouptype" id="grouptype">
+								<option value="scouts_canada">Scouts Canada</option>
+								<option value="boy_scouts_of_america">Boy Scouts of America</option>
+								<option value="association_des_scouts_du_canada">Association des Scouts du Canada</option>
+								<option value="other">Other</option>
 							</select>
+							<div id="sc-fields">
+								<label for="council">Council</label>
+								<select name="council" id="council">
+									<option value="FVC">Fraser Valley</option>
+									<option value="PCC">Pacific Coast</option>
+									<option value="Cascadia">Cadcadia</option>
+								</select>
 
-							<label for="area">Area</label>
-							<select name="area" id="area"></select>
-						</div>
-							<label for="group">Group</label>
-							<input type="text" name="group" id="group"/>
-					</fieldset>
+								<label for="area">Area</label>
+								<select name="area" id="area"></select>
+							</div>
+								<label for="group">Group</label>
+								<input type="text" name="group" id="group"/>
+						</fieldset>
 
-					<fieldset id="contactinfo">
-						<legend>Contact Information</legend>
-						<label for="contactname">Leader in Charge</label><input type="text" name="contactname" id="contactname"/>
-						<label for="streetaddress">Street Address</label><input type="text" name="streetaddress" id="streetaddress"/>
-						<label for="city">City</label><input type="text" name="city" id="city"/>
-						<label for="prov">Province/State</label><input type="text" name="prov" id="prov"/>
-						<label for="postalcode">Postal Code</label><input type="text" name="postalcose" id="postalcode"/>
-						<label for="phone">Phone Number</label><input type="text" name="phone" id="phone"/>
-						<label for="email">Email Address</label><input type="text" name="email" id="email"/>
-					</fieldset>
+						<fieldset id="contactinfo">
+							<legend>Contact Information</legend>
+							<label for="contactname">Leader in Charge</label><input type="text" name="contactname" id="contactname"/>
+							<label for="streetaddress">Street Address</label><input type="text" name="streetaddress" id="streetaddress"/>
+							<label for="city">City</label><input type="text" name="city" id="city"/>
+							<label for="prov">Province/State</label><input type="text" name="prov" id="prov"/>
+							<label for="postalcode">Postal Code</label><input type="text" name="postalcose" id="postalcode"/>
+							<label for="phone">Phone Number</label><input type="text" name="phone" id="phone"/>
+							<label for="email">Email Address</label><input type="text" name="email" id="email"/>
+						</fieldset>
 
-					<fieldset id="participantinfo">
-						<legend>Participant Information</legend>
+						<fieldset id="participantinfo">
+							<legend>Participant Information</legend>
 
-						<span>Camping:</span>
-						<label for="camping_youth">Youth ($15/each)</label><input type="text" name="camping_youth" id="camping_youth"/>
-						<label for="camping_adults">Leaders ($15/each)</label><input type="text" name="camping_adults" id="camping_adults"/>
+							<p>Camping:</p>
+							<label for="camping_youth">Youth ($15/each)</label><input type="text" name="camping_youth" id="camping_youth" class="qtyField" data-price="15"/>
+							<label for="camping_adults">Leaders ($15/each)</label><input type="text" name="camping_adults" id="camping_adults" class="qtyField" data-price="15"/>
 
-						<span>Parade/Lunch only:</span>
-						<label for="parade_lunch_youth">Youth ($5/each)</label><input type="text" name="parade_lunch_youth" id="parade_lunch_youth"/>
-						<label for="parade_lunch_adults">Leaders ($5/each)</label><input type="text" name="parade_lunch_adults" id="parade_lunch_adults"/>
+							<p>Parade/Lunch only:</p>
+							<label for="parade_lunch_youth">Youth ($5/each)</label><input type="text" name="parade_lunch_youth" id="parade_lunch_youth" class="qtyField" data-price="5"/>
+							<label for="parade_lunch_adults">Leaders ($5/each)</label><input type="text" name="parade_lunch_adults" id="parade_lunch_adults" class="qtyField" data-price="5"/>
 
-						<p>Total owing: $<span id="total"></span></p>
-						<p>Please make cheques or money orders payable to <strong>Friends of New Westminster Scouting</strong>.</p>
-						<p>Payment in full is due upon arrival at camp.</p>
-					</fieldset>
+							<p>Total owing: $<span id="total">0.00</span></p>
+							<p>Please make cheques or money orders payable to <strong>Friends of New Westminster Scouting</strong>.</p>
+							<p>Payment in full is due upon arrival at camp.</p>
+						</fieldset>
 
-					<fieldset id="agreement">
-						<legend>Agreement</legend>
-						<p>Please read the following before submitting your registration:</p>
+						<fieldset id="agreement">
+							<legend>Agreement</legend>
+							<p>Please read the following before submitting your registration:</p>
 
-						<ul>
-							<li>You are required to have completed and signed Physical Fitness forms for each youth and leader in camp.</li>
-							<li>Per Scouts Canada Bylaw, Policies and Procedures, <a href="http://www.scouts.ca/dnn/LinkClick.aspx?fileticket=BtxUCY1eNPk%3d&tabid=232&mid=599" target="_blank">section 13000</a> (page 13), any Scout participating in the range shooting activity <strong>must have signed permission from the member's parent/gaurdian</strong>.</li>
-							<li>Your group will be required to provide a number of Scouts to serve as sign carriers for the parade.</li>
-						</ul>	
-						<input type="checkbox" name="agree_to_terms" id="agree_to_terms"/><label for="agree_to_terms">I agree</label>
-					</fieldset>
+							<ul>
+								<li>You are required to have completed and signed Physical Fitness forms for each youth and leader in camp.</li>
+								<li>Per Scouts Canada Bylaw, Policies and Procedures, <a href="http://www.scouts.ca/dnn/LinkClick.aspx?fileticket=BtxUCY1eNPk%3d&tabid=232&mid=599" target="_blank">section 13000</a> (page 13), any Scout participating in the range shooting activity <strong>must have signed permission from the member's parent/gaurdian</strong>.</li>
+								<li>Your group will be required to provide a number of Scouts to serve as sign carriers for the parade.</li>
+							</ul>	
+							<input type="checkbox" name="agree_to_terms" id="agree_to_terms"/><label for="agree_to_terms">I agree</label>
+						</fieldset>
 
-				</form>
-			</div>
+					</form>
+				</div>
 			
-		</div>
+			</div>
 
+		</div>
 	</div>
 </body>
 </html>

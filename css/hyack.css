@@ -25,6 +25,10 @@ p {
 	font-family: Colaborate-Regular;
 }
 
+label {
+	font-family:  Colaborate-Regular;
+}
+
 strong {
 	font-family:  Colaborate-Bold;
 	color:  #b5111a;
@@ -65,16 +69,26 @@ strong {
 
 /* CONTENT STYLES */
 
+/*#content-wrap {
+	background: #ccc;
+}*/
+
 #content {
 	margin-top: 10px;
-	width: 800px;
-	margin: 0 auto 20px auto;
+	width: 850px;
+	margin: 0 auto 0 auto;
 	overflow: auto;
 	padding: 0 25px 0 25px;
+	background: #fff;
 }
 
-#content-blocks div {
-	padding-bottom: 30px;
+#activities, #parade, #location, #registration {
+	padding: 15px 0 15px 0;
+	border-bottom:  1px solid #024d01;
+}
+
+#registration {
+	border-bottom:  none;
 }
 
 #intro {
