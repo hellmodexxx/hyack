@@ -12,6 +12,10 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,a,abbr,ac
 
 /* TYPOGRAPHY */
 
+body {
+	font-family: Colaborate-Regular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 h2 {
 	font-family: ChunkFive, "American Typewriter", Georgia;
 	font-size: 35px;
@@ -20,14 +24,18 @@ h2 {
 	margin: 0 0 10px 0;
 }
 
-p {
-	margin: 0 0 1.12em 0;
-	font-family: Colaborate-Regular;
+h3 {
+	font-family: ChunkFive, "American Typewriter", Georgia;
+	font-size: 18px;
+	text-transform: uppercase;
+	position: relative;
+	margin: 0 0 10px 0;
 }
 
-label {
-	font-family:  Colaborate-Regular;
+p {
+	margin: 0 0 1.12em 0;
 }
+
 
 strong {
 	font-family:  Colaborate-Bold;
@@ -106,7 +114,7 @@ strong {
 
 #campinfo li {
 	list-style: none;
-	font-family: ChunkFive,Colaborate-Bold, Expressway, AlexandriaFLFBold, Helvetica, Arial, sans-serif;
+	font-family: ChunkFive, "American Typewriter", Georgia;
 	font-size:  36px;
 	letter-spacing: -2px;
 }
@@ -125,4 +133,103 @@ strong {
 
 #content a:hover {
 	border-bottom: 1px dotted;
+}
+
+.total_owing {
+	font-size:  1.6em;
+}
+
+#agreement {
+	border:  1px solid black;
+	padding: 20px;
+}
+
+/* FORMS */
+.field_set {
+	/*min-height: 110px;*/
+	clear: both;
+	padding-bottom:  20px;
+}
+
+.left_field {
+	float: left;
+	width: 400px;
+
+}
+
+.right_field {
+	float: right;
+	width: 400px;
+}
+
+.full-field {
+	width:  765px;
+}
+
+.label_error {
+	color: #b5111a;
+}
+
+input[type=text].field_error {
+	border: 1px solid #b5111a;
+	background-color: #FF9698;
+}
+
+input[type=text] {
+	font-family: inherit;
+	font-size: 2em;  /* 20px */
+	display: inline;
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 10px;
+}
+
+input[type=text]:hover, input[type=password]:hover {
+	border: 1px solid #a6c6fd;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+	border: 1px solid #a6c6fd;
+	background-color: #ecf6fe;
+}
+
+
+label {
+	display: block;
+	width: 90%;
+}
+
+label.desc {
+	display: block;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+select {
+	/*font-size: 1.5em;*/
+	width:  100%;
+}
+
+legend {
+	font-family: ChunkFive, "American Typewriter", Georgia;
+	font-size: 25px;
+	text-transform: uppercase;
+	position: relative;
+	margin: 0 0 10px 0;
+	display: block;
+}
+
+#ajax_response {
+	margin-top: 10px;
+	padding: 10px;
+}
+
+#ajax_response.error {
+	border: 1px solid #b5111a;
+	background-color: #FF9698;
+}
+
+#ajax_response.success {
+	border: 1px solid #024d01;
+	background-color: #AFDBB1;
 }

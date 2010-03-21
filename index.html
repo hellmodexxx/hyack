@@ -66,9 +66,9 @@
 					<a name="location"></a>
 					<h2>Location &amp; Logistics</h2>
 
-					<!-- <div class="group" style="float: left; padding: 0 10px 10px 20px">
+					<div class="group" style="float: left; padding: 0 10px 10px 20px">
 						<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=First+Street+and+Vancouver+Street,+New+Westminster+BC&amp;sll=49.21178,-122.901585&amp;sspn=0.008663,0.018883&amp;ie=UTF8&amp;hq=&amp;hnear=First+St+%26+Vancouver+St,+New+Westminster,+Greater+Vancouver+Regional+District,+British+Columbia,+Canada&amp;ll=49.212972,-122.902808&amp;spn=0.004906,0.00912&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe>
-					</div> -->
+					</div>
 
 					<p>Hyack Camp is held in Queens Park in the middle of New Westminster. The camp site is located <a href="http://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=&sll=49.203705,-122.914588&sspn=0.069314,0.151062&g=new+westminster,+bc&ie=UTF8&ll=49.212159,-122.902722&spn=0.004906,0.00912&z=16" target="_blank">adjacent to First Street and Vancouver Street</a>.</p>
 
@@ -81,73 +81,113 @@
 				<div id="registration">
 					<a name="registration"></a>
 					<h2>Registration</h2>
-					<p>Please complete the form below to register for Hyack Camp.</p>
-					<form id="hyackreg" name="hyackreg" action="#" method="POST">
+					<div id="registration_form">
+						<p>Please complete the form below to register for Hyack Camp. You may also register by emailing your information to <a href="mailto:hyack@newwestscouts.ca">hyack@newwestscouts.ca</a></p>
+						<form id="hyackreg" name="hyackreg" action="register.php" method="POST">
 
-						<fieldset id="groupinfo">
-							<legend>Group Information</legend>
-							<label for="grouptype">Organization</label>
-							<select name="grouptype" id="grouptype">
-								<option value="scouts_canada">Scouts Canada</option>
-								<option value="boy_scouts_of_america">Boy Scouts of America</option>
-								<option value="association_des_scouts_du_canada">Association des Scouts du Canada</option>
-								<option value="other">Other</option>
-							</select>
-							<div id="sc-fields">
-								<label for="council">Council</label>
-								<select name="council" id="council">
-									<option value="FVC">Fraser Valley</option>
-									<option value="PCC">Pacific Coast</option>
-									<option value="Cascadia">Cadcadia</option>
-								</select>
+						
+							<fieldset id="groupinfo">
+								<legend>Group Information</legend>
+							
+								<div class="field_set group">
+									<span class="left_field">
+										<label for="organization">Organization</label>
+										<select name="organization" id="organization" class="required">
+											<option value="scouts_canada">Scouts Canada</option>
+											<option value="boy_scouts_of_america">Boy Scouts of America</option>
+											<option value="association_des_scouts_du_canada">Association des Scouts du Canada</option>
+											<option value="other">Other</option>
+										</select>
+									</span>
+								</div>
+							
+								<div id="sc-fields">
+									<div class="field_set group">
+										<span class="left_field">
+											<label for="council">Council</label>
+											<select name="council" id="council" class="required">
+												<option value="FVC">Fraser Valley</option>
+												<option value="PCC">Pacific Coast</option>
+												<option value="Cascadia">Cadcadia</option>
+											</select>
+										</span>
+										<span class="right_field">
+											<label for="area">Area</label>
+											<select name="area" id="area" class="required"></select>
+										</span>
+									</div>
+								</div>
+							
+								<div class="field_set group">
+									<span class="full_field"><label for="group">Group</label><input type="text" name="group" id="group" class="required"/></span>
+								</div>
+								
+							</fieldset>
 
-								<label for="area">Area</label>
-								<select name="area" id="area"></select>
+							<fieldset id="contactinfo">
+								<legend>Contact Information</legend>
+								<div class="field_set group">
+									<span class="full_field"><label for="contactname">Leader in Charge</label><input type="text" name="contactname" id="contactname" class="required"/></span>
+								</div>
+							
+								<div class="field_set group">
+									<span class="left_field"><label for="streetaddress">Street Address</label><input type="text" name="streetaddress" id="streetaddress" class="required"/></span>
+									<span class="right_field"><label for="city">City</label><input type="text" name="city" id="city" class="required"/></span>
+								</div>
+							
+								<div class="field_set group">
+									<span class="left_field"><label for="prov">Province/State</label><input type="text" name="prov" id="prov" class="required"/></span>
+									<span class="right_field"><label for="postalcode">Postal Code</label><input type="text" name="postalcode" id="postalcode" class="required"/></span>
+								</div>
+							
+								<div class="field_set group">
+									<span class="left_field"><label for="phone">Phone Number</label><input type="text" name="phone" id="phone" class="required"/></span>
+									<span class="right_field"><label for="email">Email Address</label><input type="text" name="email" id="email" class="required"/></span>
+								</div>
+
+							</fieldset>
+
+							<fieldset id="participantinfo">
+								<legend>Participant Information</legend>
+
+								<h3>Camping:</h3>
+								<div class="field_set group">
+									<span class="left_field"><label for="camping_youth">Youth ($15/each)</label><input type="text" name="camping_youth" id="camping_youth" class="qtyField required" data-price="15"/></span>
+									<span class="right_field"><label for="camping_adults">Leaders ($15/each)</label><input type="text" name="camping_adults" id="camping_adults" class="qtyField required" data-price="15"/></span>
+								</div>
+							
+								<h3>Parade/Lunch only:</h3>							
+								<div class="field_set group">
+									<span class="left_field"><label for="parade_lunch_youth">Youth ($5/each)</label><input type="text" name="parade_lunch_youth" id="parade_lunch_youth" class="qtyField" data-price="5"/></span>
+									<span class="right_field"><label for="parade_lunch_adults">Leaders ($5/each)</label><input type="text" name="parade_lunch_adults" id="parade_lunch_adults" class="qtyField" data-price="5"/></span>
+								</div>
+
+
+							
+							
+
+								<p class="total_owing">Total owing: $<span id="total">0.00</span></p>
+								<input type="hidden" name="total_amount" id="total_amount"/>
+								<p>Please make cheques or money orders payable to <strong>Friends of New Westminster Scouting</strong>. Payment in full is due upon arrival at camp.</p>
+							</fieldset>
+
+							<div id="agreement">
+								<p>Please read the following before submitting your registration:</p>
+
+								<ul>
+									<li>You are required to have completed and signed Physical Fitness forms for each youth and leader in camp.</li>
+									<li>Per Scouts Canada Bylaw, Policies and Procedures, <a href="http://www.scouts.ca/dnn/LinkClick.aspx?fileticket=BtxUCY1eNPk%3d&tabid=232&mid=599" target="_blank">section 13000</a> (page 13), any Scout participating in the range shooting activity <strong>must have signed permission from the member's parent/gaurdian</strong>.</li>
+									<li>Your group will be required to provide a number of Scouts to serve as sign carriers for the parade.</li>
+								</ul>	
+								<input type="checkbox" name="agree_to_terms" id="agree_to_terms"/><label style="display:inline" for="agree_to_terms">I agree</label>
 							</div>
-								<label for="group">Group</label>
-								<input type="text" name="group" id="group"/>
-						</fieldset>
 
-						<fieldset id="contactinfo">
-							<legend>Contact Information</legend>
-							<label for="contactname">Leader in Charge</label><input type="text" name="contactname" id="contactname"/>
-							<label for="streetaddress">Street Address</label><input type="text" name="streetaddress" id="streetaddress"/>
-							<label for="city">City</label><input type="text" name="city" id="city"/>
-							<label for="prov">Province/State</label><input type="text" name="prov" id="prov"/>
-							<label for="postalcode">Postal Code</label><input type="text" name="postalcose" id="postalcode"/>
-							<label for="phone">Phone Number</label><input type="text" name="phone" id="phone"/>
-							<label for="email">Email Address</label><input type="text" name="email" id="email"/>
-						</fieldset>
-
-						<fieldset id="participantinfo">
-							<legend>Participant Information</legend>
-
-							<p>Camping:</p>
-							<label for="camping_youth">Youth ($15/each)</label><input type="text" name="camping_youth" id="camping_youth" class="qtyField" data-price="15"/>
-							<label for="camping_adults">Leaders ($15/each)</label><input type="text" name="camping_adults" id="camping_adults" class="qtyField" data-price="15"/>
-
-							<p>Parade/Lunch only:</p>
-							<label for="parade_lunch_youth">Youth ($5/each)</label><input type="text" name="parade_lunch_youth" id="parade_lunch_youth" class="qtyField" data-price="5"/>
-							<label for="parade_lunch_adults">Leaders ($5/each)</label><input type="text" name="parade_lunch_adults" id="parade_lunch_adults" class="qtyField" data-price="5"/>
-
-							<p>Total owing: $<span id="total">0.00</span></p>
-							<p>Please make cheques or money orders payable to <strong>Friends of New Westminster Scouting</strong>.</p>
-							<p>Payment in full is due upon arrival at camp.</p>
-						</fieldset>
-
-						<fieldset id="agreement">
-							<legend>Agreement</legend>
-							<p>Please read the following before submitting your registration:</p>
-
-							<ul>
-								<li>You are required to have completed and signed Physical Fitness forms for each youth and leader in camp.</li>
-								<li>Per Scouts Canada Bylaw, Policies and Procedures, <a href="http://www.scouts.ca/dnn/LinkClick.aspx?fileticket=BtxUCY1eNPk%3d&tabid=232&mid=599" target="_blank">section 13000</a> (page 13), any Scout participating in the range shooting activity <strong>must have signed permission from the member's parent/gaurdian</strong>.</li>
-								<li>Your group will be required to provide a number of Scouts to serve as sign carriers for the parade.</li>
-							</ul>	
-							<input type="checkbox" name="agree_to_terms" id="agree_to_terms"/><label for="agree_to_terms">I agree</label>
-						</fieldset>
-
-					</form>
+							<fieldset>
+								<input type="submit" value="Submit Registration" style="margin-top:20px"/>
+							</fieldset>
+						</form>
+					</div>
+					<div id="ajax_response"></div>
 				</div>
 			
 			</div>
