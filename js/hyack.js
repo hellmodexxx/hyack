@@ -45,7 +45,7 @@ $(document).ready(function () {
 	},
 	orgHandler = function(org) {
 		var org = $('#organization').val();
-		if (org !== "scouts_canada") {
+		if (org !== "Scouts Canada") {
 			$('#sc-fields').hide();
 		} else {
 			$('#sc-fields').show();
@@ -183,5 +183,9 @@ $(document).ready(function () {
 		});
 		
 		return false;
+	});
+
+	$("input[type=text]").focus(function(){
+    		this.select();
 	});
 });

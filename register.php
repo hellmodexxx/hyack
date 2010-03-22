@@ -65,8 +65,6 @@ $required_fields = array(
 	"postalcode" => "Postal Code", 
 	"phone" => "Phone Number",
 	"email" => "Email Address",
-	"camping_youth" => "Number of youth camping", 
-	"camping_adults" => "Number of adults camping",
 	"agree_to_terms" => "Agree to terms checkbox"
 );
 
@@ -78,10 +76,10 @@ $numeric_fields = array(
 );
 
 // if organization !scouts_canada, unset council and area from $doc
-if ($doc['organization'] != "scouts_canada") {
+if ($doc['organization'] != "Scouts Canada") {
 	unset($doc['council']);
 	unset($doc['area']);
-} else if ($doc['organization'] == "scouts_canada") {
+} else if ($doc['organization'] == "Scouts Canada") {
 	$required_fields['council'] = "Council";
 	$required_fields["area"] = "Area";
 }
@@ -143,7 +141,7 @@ if ($response['status'] == "") {
 			}
 		}
 		
-		$body .= "\n Your total owing amount owing is $" . $doc['total_amount'] . "Payment is due upon arrival at camp. Please make cheques payable to "Friends of New Westminster Scouting."\n\n";
+		$body .= "\n Your total owing amount owing is $" . $doc['total_amount'] . ". Payment is due upon arrival at camp. Please make cheques payable to \"Friends of New Westminster Scouting\".\n\n";
 		$body .= "We look forward to seeing your group at Hyack Camp 2010 on May 28!\n\n";
 		$body .= "Yours in Scouting,\nHyack Camp 2010\n";
 		mail($to, $subject, $body, $headers);
