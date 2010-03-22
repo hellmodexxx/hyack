@@ -45,6 +45,7 @@ $field_map = array(
 	"contactname" => "Leader in Charge", 
 	"streetaddress" => "Street Address", 
 	"city" => "City", 
+	"prov" => "Province/State",
 	"postalcode" => "Postal Code", 
 	"phone" => "Phone Number",
 	"email" => "Email Address",
@@ -134,7 +135,7 @@ if ($response['status'] == "") {
 		$subject = 'Hyack Camp 2010 Registration Confirmation';
 		$body = "Thank you for registering your group for Hyack Camp 2010. Your registration information is below. Please review it and let us know if there are any changes to be made (simply reply to this email).\n\n";
 		foreach ($doc as $key=>$value) {
-			if ($key != "agree_to_terms") {
+			if ($key != "agree_to_terms" || $key != "_id" || ) {
 				if ($key == "registration_date") {
 					$ts = $value->sec;
 					$body .= $field_map[$key] . ": " . date('r', $ts);
