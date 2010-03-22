@@ -107,7 +107,7 @@ if (count($non_numeric_fields) > 0) {
 }
 
 if ($response['status'] == "") {
-	$m = new Mongo('icat-graham.its.sfu.ca');
+	$m = new Mongo('icat-graham.its.sfu.ca:80');
 	$c = $m->hyack->registration;
 	$insert = $c->insert($doc);
 	$e = $m->hyack->lastError();
