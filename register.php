@@ -140,7 +140,8 @@ if ($response['status'] == "") {
 		$body .= "\n Your total owing amount owing is $" . $doc['total_amount'] . "\n\n";
 		$body .= "We look forward to seeing your group at Hyack Camp 2010 on May 28\n\n";
 		$body .= "Yours in Scouting,\nHyack Camp 2010\n";
-		mail($to, $subject, $message, $headers);
+		mail($to, $subject, $body, $headers);
+		$response['doc'] = $doc;
 	} else if (!$isdup && $errmsg != "") {
 		set_error('unknown_error', "An unknown error has occurred while attempting to save your registration information. The camp organizers have been informed of the error and will follow up with you to complete your registration.", null);
 		$docjson = json_encode($doc);
@@ -149,7 +150,7 @@ if ($response['status'] == "") {
 		$headers = 'From: Hyack Camp 2010 <>' . "\r\n";
 		$subject = 'Hyack registration error';
 		$body = "Something went horribly wrong:\n\nError Message: " . $errmsg . "\n\n$docjson";
-		mail($to, $subject, $message, $headers);
+		mail($to, $subject, $body, $headers);
 	}
 }
 
