@@ -3,7 +3,7 @@
 // register.php
 /* needs to:
 	X validate input
-	- sanitize input (phone number)
+	X sanitize input (phone number)
 	X check if group exists (?)
 	X insert into db
 	X return success to browser
@@ -34,6 +34,25 @@ function set_error($error_type, $error_message, $fields) {
 // grab the POST vars and stash in $doc
 $doc = $_POST;
 $doc['registration_date'] = new MongoDate();
+$doc['phone'] = ereg_replace("[^0-9]", "", $doc['phone']);
+
+$field_map = array(
+	"organization" => "Organization", 
+	"council" => "Council",
+	"area" => "Area",
+	"group" => "Group Name",
+	"contactname" => "Leader in Charge", 
+	"streetaddress" => "Street Address", 
+	"city" => "City", 
+	"postalcode" => "Province", 
+	"phone" => "Phone Number",
+	"email" => "Email Address",
+	"camping_youth" => "Number of youth camping", 
+	"camping_adults" => "Number of adults camping",
+	"parade_lunch_youth" => "Number of parade/lunch/badge-only youth",
+	"parade_lunch_adults" => "Number of parade/lunch/badge-only adults",
+	
+);
 
 $required_fields = array(
 	"organization" => "Organization", 
@@ -88,7 +107,7 @@ if (count($non_numeric_fields) > 0) {
 }
 
 if ($response['status'] == "") {
-	$m = new Mongo();
+	$m = new Mongo('icat-graham.its.sfu.ca');
 	$c = $m->hyack->registration;
 	$insert = $c->insert($doc);
 	$e = $m->hyack->lastError();
@@ -99,12 +118,33 @@ if ($response['status'] == "") {
 		set_error('duplicate_group', "A group named <strong>" . $doc['group'] . "</strong> is already registered. Please contact <a href=\"mailto:hyack@newwestscouts.ca\">hyack@newwestscouts.ca</a> if you need to modify your registration.", null);
 	} else if ($errmsg == "") {
 		$response['status'] = 'success';
-		$response['message'] = 'done';
+		$message = array(
+			'<p>Than you for registering for Hyack Camp 2010! A registration confirmation has been sent to ',
+			$doc['email'],
+			'</p>',
+			'<p>If you need to change any registration information or have any questions, please contact us at <a href="mailto:hyack@newwestscouts.ca">hyack@newwestscouts.ca</a></p>',
+			'<p>We\'re looking forward to seeing you at Hyack Camp 2010!</p>'
+		);
+		$response['message'] = join("", $message);
 		// send email to user and hyack@newwestscous.ca confirming registration
 	} else if (!$isdup && $errmsg != "") {
 		set_error('unknown_error', "An unknown error has occurred while attempting to save your registration information. The camp organizers have been informed of the error and will follow up with you to complete your registration.", null);
 		$docjson = json_encode($doc);
 		// send email to hyack@newwestscouts.ca with error message and json doc
+		$to = $doc['email'];
+		$headers = 'From: Hyack Camp 2010 <hyack@newwestscouts.ca>' . "\r\n";
+		$headers .= "Bcc: hyack@newwestscouts.ca" . "\r\n";
+		$subject = 'Hyack Camp 2010 Registration Confirmation';
+		$body = "Thank you for registering your group for Hyack Camp 2010. Your registration information is below. Please review it and let us know if there are any changes to be made (simply reply to this email).\n\n";
+		foreach ($doc as $key=>$value) {
+			if ($key != "agree_to_terms") {
+				$body .= $field_map[$key] . ": " . $value . "\n";
+			}
+		}
+		$body .= "\n Your total owing amount owing is $" . $doc['total_amount'] . "\n\n";
+		$body .= "We look forward to seeing your group at Hyack Camp 2010 on May 28\n\n";
+		$body .= "Yours in Scouting,\nHyack Camp 2010\n";
+		mail($to, $subject, $message, $headers);
 	}
 }
 

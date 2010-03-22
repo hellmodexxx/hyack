@@ -72,9 +72,8 @@ $(document).ready(function () {
 		});
 	},
 	print_success = function(message) {
-		console.log(message);
 		$('#ajax_response').empty().removeClass().addClass('success').html(message);
-		$('#registration_form').hide();
+		$('#registration_form').slideUp('slow');
 	};
 			
 	$(":submit").attr("disabled",true);

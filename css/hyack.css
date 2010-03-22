@@ -144,6 +144,21 @@ strong {
 	padding: 20px;
 }
 
+/* FOOTER */
+
+#footer {
+	margin: 20px auto 80px auto;
+	width: 850px;
+}
+
+.seeyathere {
+	font: 42px ChunkFive;
+	text-align: center;
+	display: block;
+	text-transform: uppercase;
+	color:  #b5111a;
+}
+
 /* FORMS */
 .field_set {
 	/*min-height: 110px;*/
@@ -206,7 +221,6 @@ label.desc {
 }
 
 select {
-	/*font-size: 1.5em;*/
 	width:  100%;
 }
 
