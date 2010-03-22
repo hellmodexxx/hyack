@@ -112,8 +112,8 @@ $(document).ready(function () {
 	});
 	
 	$('#agree_to_terms').change(function() {
-		var val = $(this + ":checked").val();
-		if (val != undefined) {
+		var checked = $(this).attr('checked');
+		if (checked) {
 			$(':submit').attr('disabled',false);
 		} else {
 			$(':submit').attr('disabled',true);
