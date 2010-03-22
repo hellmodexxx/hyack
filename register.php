@@ -37,6 +37,7 @@ $doc['registration_date'] = new MongoDate();
 $doc['phone'] = ereg_replace("[^0-9]", "", $doc['phone']);
 
 $field_map = array(
+	"registration_date" => "Registration Date",
 	"organization" => "Organization", 
 	"council" => "Council",
 	"area" => "Area",
@@ -44,14 +45,13 @@ $field_map = array(
 	"contactname" => "Leader in Charge", 
 	"streetaddress" => "Street Address", 
 	"city" => "City", 
-	"postalcode" => "Province", 
+	"postalcode" => "Postal Code", 
 	"phone" => "Phone Number",
 	"email" => "Email Address",
 	"camping_youth" => "Number of youth camping", 
 	"camping_adults" => "Number of adults camping",
 	"parade_lunch_youth" => "Number of parade/lunch/badge-only youth",
-	"parade_lunch_adults" => "Number of parade/lunch/badge-only adults",
-	
+	"parade_lunch_adults" => "Number of parade/lunch/badge-only adults"
 );
 
 $required_fields = array(
@@ -60,7 +60,8 @@ $required_fields = array(
 	"contactname" => "Leader in Charge", 
 	"streetaddress" => "Street Address", 
 	"city" => "City", 
-	"postalcode" => "Province", 
+	"prov" => "Province/State",
+	"postalcode" => "Postal Code", 
 	"phone" => "Phone Number",
 	"email" => "Email Address",
 	"camping_youth" => "Number of youth camping", 
@@ -134,9 +135,16 @@ if ($response['status'] == "") {
 		$body = "Thank you for registering your group for Hyack Camp 2010. Your registration information is below. Please review it and let us know if there are any changes to be made (simply reply to this email).\n\n";
 		foreach ($doc as $key=>$value) {
 			if ($key != "agree_to_terms") {
-				$body .= $field_map[$key] . ": " . $value . "\n";
+				if ($key == "registration_date") {
+					$ts = $value->sec;
+					$body .= $field_map[$key] . ": " . date('r', $ts);
+				} else {
+					$body .= $field_map[$key] . ": " . $value . "\n";
+				}
+				
 			}
 		}
+		
 		$body .= "\n Your total owing amount owing is $" . $doc['total_amount'] . "\n\n";
 		$body .= "We look forward to seeing your group at Hyack Camp 2010 on May 28\n\n";
 		$body .= "Yours in Scouting,\nHyack Camp 2010\n";
