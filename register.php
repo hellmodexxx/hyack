@@ -134,7 +134,7 @@ if ($response['status'] == "") {
 		$headers .= "Bcc: hyack@newwestscouts.ca" . "\r\n";
 		$subject = 'Hyack Camp 2010 Registration Confirmation';
 		$body = "Thank you for registering your group for Hyack Camp 2010. Your registration information is below. Please review it and let us know if there are any changes to be made (simply reply to this email).\n\n";
-		foreach ($field_map as $name=>$label) {	
+		foreach ($field_map as $field=>$label) {	
 			if ($field == "registration_date") {
 				$ts = $doc[$field]->sec;
 				$body .= $label . ": " . date('r', $ts) . "\n";
@@ -143,8 +143,8 @@ if ($response['status'] == "") {
 			}
 		}
 		
-		$body .= "\n Your total owing amount owing is $" . $doc['total_amount'] . "\n\n";
-		$body .= "We look forward to seeing your group at Hyack Camp 2010 on May 28\n\n";
+		$body .= "\n Your total owing amount owing is $" . $doc['total_amount'] . "Payment is due upon arrival at camp. Please make cheques payable to "Friends of New Westminster Scouting."\n\n";
+		$body .= "We look forward to seeing your group at Hyack Camp 2010 on May 28!\n\n";
 		$body .= "Yours in Scouting,\nHyack Camp 2010\n";
 		mail($to, $subject, $body, $headers);
 		$response['doc'] = $doc;
