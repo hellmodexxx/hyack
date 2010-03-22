@@ -52,8 +52,7 @@ $field_map = array(
 	"camping_youth" => "Number of youth camping", 
 	"camping_adults" => "Number of adults camping",
 	"parade_lunch_youth" => "Number of parade/lunch/badge-only youth",
-	"parade_lunch_adults" => "Number of parade/lunch/badge-only adults",
-	"total_amount" => "Total amount due"
+	"parade_lunch_adults" => "Number of parade/lunch/badge-only adults"
 );
 
 $required_fields = array(
@@ -135,15 +134,12 @@ if ($response['status'] == "") {
 		$headers .= "Bcc: hyack@newwestscouts.ca" . "\r\n";
 		$subject = 'Hyack Camp 2010 Registration Confirmation';
 		$body = "Thank you for registering your group for Hyack Camp 2010. Your registration information is below. Please review it and let us know if there are any changes to be made (simply reply to this email).\n\n";
-		foreach ($doc as $key=>$value) {
-			if ($key != "agree_to_terms" || $key != "_id") {
-				if ($key == "registration_date") {
-					$ts = $value->sec;
-					$body .= $field_map[$key] . ": " . date('r', $ts);
-				} else {
-					$body .= $field_map[$key] . ": " . $value . "\n";
-				}
-				
+		foreach ($field_map as $name=>$label) {	
+			if ($field == "registration_date") {
+				$ts = $doc[$field]->sec;
+				$body .= $label . ": " . date('r', $ts) . "\n";
+			} else {
+				$body .= $label . ": " . $doc[$field] . "\n";
 			}
 		}
 		
