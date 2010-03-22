@@ -129,7 +129,7 @@ if ($response['status'] == "") {
 		// send email to user and hyack@newwestscous.ca confirming registration
 		$to = $doc['email'];
 		$headers = 'From: Hyack Camp 2010 <hyack@newwestscouts.ca>' . "\r\n";
-		$headers .= "Bcc: hyack@newwestscouts.ca" . "\r\n";
+		$headers .= "Bcc: hello@grahamballantyne.com" . "\r\n";
 		$subject = 'Hyack Camp 2010 Registration Confirmation';
 		$body = "Thank you for registering your group for Hyack Camp 2010. Your registration information is below. Please review it and let us know if there are any changes to be made (simply reply to this email).\n\n";
 		foreach ($field_map as $field=>$label) {	
@@ -146,6 +146,10 @@ if ($response['status'] == "") {
 		$body .= "Yours in Scouting,\nHyack Camp 2010\n";
 		mail($to, $subject, $body, $headers);
 		$response['doc'] = $doc;
+		$ml_url = "http://box257.bluehost.com/mailman/admin/hyack-participants_newwestscouts.ca/members/add?subscribe_or_invite=0&send_welcome_msg_to_this_batch=0&notification_to_list_owner=0&subscribees_upload=" . $doc['email'] . "&adminpw=.fRKJkH51Uo8qFtBbc3Ql";
+		$ml_cmd = "/usr/bin/curl -s '$ml_url'";
+		shell_exec($ml_cmd);
+		$response['ml'] = $ml_cmd;
 	} else if (!$isdup && $errmsg != "") {
 		set_error('unknown_error', "An unknown error has occurred while attempting to save your registration information. The camp organizers have been informed of the error and will follow up with you to complete your registration.", null);
 		$docjson = json_encode($doc);
