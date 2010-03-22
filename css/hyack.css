@@ -12,6 +12,12 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,a,abbr,ac
 
 /* TYPOGRAPHY */
 
+@font-face {
+	font-family: 'ChunkFiveRegular';
+	src: url('Chunkfive.eot');
+	src: local('ChunkFive'), local('ChunkFive'), url('fonts/Chunkfive.woff') format('woff'), url('fonts/Chunkfive.ttf') format('truetype'), url('fonts/Chunkfive.svg#ChunkFive') format('svg');
+}
+
 body {
 	font-family: Colaborate-Regular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -152,7 +158,7 @@ strong {
 }
 
 .seeyathere {
-	font: 42px ChunkFive;
+	font: 42px ChunkFive, 'American Typewriter', Georgia;
 	text-align: center;
 	display: block;
 	text-transform: uppercase;
